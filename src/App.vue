@@ -1,6 +1,17 @@
 <template>
   <div id="app">
     <div class="container">
+      <ul>
+        <li @click="$router.push('/home')">
+          Home
+        </li>
+        <li @click="$router.push('/')">
+          Login
+        </li>
+        <li @click="$router.push('/user')">
+          User
+        </li>
+      </ul>
       <router-view></router-view>
     </div>
   </div>
