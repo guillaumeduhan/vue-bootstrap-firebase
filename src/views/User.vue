@@ -1,6 +1,6 @@
 <template lang="html">
   <div>
-    <h1>I am on user page</h1>
+    <h1 v-if="$route.params.id">I am on {{ $route.params.id }}'s page</h1>
   </div>
 </template>
 
