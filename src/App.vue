@@ -1,7 +1,18 @@
 <template>
   <div id="app">
     <div class="container">
-      <h1>My-first-vue-project</h1>
+      <ul>
+        <li @click="$router.push('/home')">
+          Home
+        </li>
+        <li @click="$router.push('/')">
+          Login
+        </li>
+        <li @click="$router.push('/user')">
+          User
+        </li>
+      </ul>
+      <router-view></router-view>
     </div>
   </div>
 </template>
