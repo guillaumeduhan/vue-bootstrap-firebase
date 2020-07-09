@@ -1,6 +1,7 @@
 import Vue from "vue";
 import VueRouter from "vue-router";
 
+import Friends from "@/views/Friends.vue";
 import Home from "@/views/Home.vue";
 import Login from "@/views/Login.vue";
 import NotFound from "@/views/NotFound.vue";
@@ -13,6 +14,9 @@ const routes = [
     path: "*",
     name: "NotFound",
     component: NotFound,
+    meta: {
+      hideNavbar: true,
+    },
   },
   {
     name: "Home",
@@ -23,11 +27,19 @@ const routes = [
     name: "Login",
     path: "/",
     component: Login,
+    meta: {
+      hideNavbar: true,
+    },
   },
   {
     name: "Profile",
-    path: "/user/:id",
+    path: "/user",
     component: User,
+  },
+  {
+    name: "Friends",
+    path: "/friends",
+    component: Friends,
   },
 ];
 

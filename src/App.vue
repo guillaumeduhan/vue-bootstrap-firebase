@@ -1,35 +1,17 @@
 <template>
-  <div id="app">
-    <div class="container">
-      <ul>
-        <li @click="$router.push('/home')">
-          Home
-        </li>
-        <li @click="$router.push('/')">
-          Login
-        </li>
-        <li @click="$router.push('/user')">
-          User
-        </li>
-      </ul>
-      <router-view></router-view>
-    </div>
-  </div>
+	<div id="app">
+		<Navigation v-if="!$route.meta.hideNavbar" />
+		<router-view></router-view>
+	</div>
 </template>
 
 <script>
+import Navigation from "@/components/commons/Navigation.vue";
+
 export default {
-  name: "App",
+	name: "App",
+	components: {
+		Navigation
+	}
 };
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

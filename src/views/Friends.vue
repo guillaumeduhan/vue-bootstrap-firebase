@@ -1,11 +1,11 @@
 <template lang="html">
   <div>
-    <h1>I am on profile page</h1>
+    <h1>I am on friends page</h1>
   </div>
 </template>
 
 <script>
 export default {
-	name: "User"
+	name: "Friends"
 };
 </script>
