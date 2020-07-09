@@ -1,7 +1,7 @@
 <template>
 	<div id="Navigation">
 		<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-			<a class="navbar-brand" href="#">Navbar</a>
+			<a class="navbar-brand" href="#">Cookie Movie</a>
 			<button
 				class="navbar-toggler"
 				type="button"
@@ -13,7 +13,11 @@
 			>
 				<span class="navbar-toggler-icon"></span>
 			</button>
-			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+			<div class="collapse navbar-collapse d-flex justify-content-between" id="navbarNavAltMarkup">
+				<form class="form-inline my-2 my-lg-0">
+					<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
+					<button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
+				</form>
 				<div class="navbar-nav">
 					<router-link
 						v-for="(link, index) in links"
@@ -23,11 +27,6 @@
 					>{{ link.name }}</router-link>
 				</div>
 			</div>
-
-			<form class="form-inline my-2 my-lg-0">
-				<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" />
-				<button class="btn btn-primary my-2 my-sm-0" type="submit">Search</button>
-			</form>
 		</nav>
 	</div>
 </template>
