@@ -38,7 +38,7 @@
         />
       </div>
       <button type="submit" class="btn btn-dark" @click="sendEmailAndPassword">
-        Login
+        {{ !login ? "Sign up" : "Login" }}
       </button>
     </div>
     <p class="text-dark" role="button" @click="login = !login">
@@ -48,6 +48,8 @@
 </template>
 
 <script>
+import firebase from "@/services/_firebase";
+
 export default {
   name: "Login",
   data() {
@@ -57,6 +59,21 @@ export default {
       login: true,
       password: undefined,
     };
+  },
+  methods: {
+    sendEmailAndPassword() {
+      if (this.login) {
+      } else {
+        firebase
+          .createUser(this.email, this.password)
+          .then((data) => {
+            console.log(data);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+    },
   },
 };
 </script>
